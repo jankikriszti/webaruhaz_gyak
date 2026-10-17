@@ -1,77 +1,176 @@
-*{box-sizing: border-box;}
-body{
-    background-color: rgb(6, 45, 82);
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(157, 218, 226);
+* {
+  box-sizing: border-box;
 }
-main{
-    background-color: rgb(16, 74, 128);
-    width: 90%;
-    margin: auto;
-    border: 1px solid rgb(80, 147, 209);
+body {
+  background-color: rgb(6, 45, 82);
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(157, 218, 226);
+}
+main {
+  background-color: rgb(16, 74, 128);
+  width: 90%;
+  margin: auto;
+  border: 1px solid rgb(78, 133, 185);
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "h h" "n n" "ar as" "f f";
+}
+nav {
+  grid-area: n;
+  background-color: rgb(78, 133, 185);
+  width: 100%;
+  padding: 5px;
+}
+header {
+  grid-area: h;
+  width: 100%;
+  background-color: rgb(16, 74, 128);
+  text-align: center;
+}
+article {
+  grid-area: ar;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+aside {
+  grid-area: as;
+  border: 1px solid rgb(78, 133, 185);
+  padding: 5px;
+}
+#Kosar {
+  border-radius: 10px;
+  background-color: rgb(78, 133, 185);
+  text-align: center;
+  height: 100%;
+}
+#Kosar p {
+  text-align: left;
+  margin: 0;
+  padding: 5px;
+}
+#Kosar ul {
+  padding-left: 0;
+}
+#Kosar ul li {
+  list-style: none;
+}
+#kivalasztott {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#fizetes a {
+  text-decoration: none;
+  color: rgb(157, 218, 226);
+}
+#fizetes {
+  width: 80%;
+  border: 1px solid rgb(157, 218, 226);
+  background-color: rgb(11, 58, 102);
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  margin: auto auto 10px auto;
+}
+#osszeg {
+  display: inline-block;
+  padding: 10px;
+  border-top: 1px solid rgb(157, 218, 226);
+}
+footer {
+  grid-area: f;
+}
+nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  padding-left: 0;
+}
+nav ul li {
+  border: 1px hidden;
+  width: 100%;
+  border-radius: 10px;
+  background-color: rgb(3, 32, 59);
+  list-style: none;
+  text-align: center;
+  padding: 5px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: rgb(157, 218, 226);
+}
+
+.termek {
+  border: 1px solid rgb(3, 32, 59);
+  background-color: rgb(78, 133, 185);
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px;
+}
+.termek h2 {
+  margin: 0;
+}
+.termek p {
+  margin: 0;
+  padding-bottom: 5px;
+}
+.Ar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.Ar a {
+  text-decoration: none;
+  color: rgb(157, 218, 226);
+  padding: 5px;
+  border: 1px solid rgb(157, 218, 226);
+  border-radius: 10px;
+  background-color: rgb(11, 58, 102);
+}
+.Ar p {
+  padding: 7px;
+  text-align: right;
+}
+.kep {
+  width: 100%;
+  height: 100px;
+  border: 1px solid rgb(3, 32, 59);
+  border-radius: 10px;
+  overflow: hidden;
+  display: inline-block;
+}
+.kep img {
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 940px) {
+  article {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 770px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-areas: "h" "n" "as" "ar" "f";
+  }
+}
+@media screen and (max-width: 610px) {
+  article {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 440px) {
+  article {
+    grid-template-columns: 1fr;
+  }
+  nav ul {
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-areas:"h h h h""n n n n""ar ar ar as""f f f f" ;
+    grid-template-columns: 1fr;
+  }
+  .kep {
+    height: 60%;
+  }
 }
-nav{
-    grid-area: n;
-    background-color: rgb(80, 147, 209);
-    width: 100%;
-    padding: 5px;
-    
-}
-header{
-    grid-area: h;
-    width: 100%;
-    background-color: rgb(16, 74, 128);
-    text-align: center;
-}
-article{
-    grid-area: ar;
-}
-aside{
-    grid-area: as;
-}
-footer{
-    grid-area: f;
-}
-nav ul{
-    display: grid;
-    grid-template-columns: 20% 20% 20%;
-    gap: 10px;
-    padding-left:0;
-}
-nav ul li{
-    border: 1px hidden;
-    border-radius: 10px;
-    background-color: rgb(3, 32, 59);
-    list-style: none;
-    text-align: center;
-    padding: 5px;
-    
-}
-nav ul li a{
-    text-decoration: none;
-    color: rgb(157, 218, 226);
-}
-
-.termek{
-    border: 1px solid rgb(3, 32, 59);
-    width: 200px;
-    height: 200px;
-    text-align: center;
-}
-#kep{
-    width: 150px;
-    height: 100px;
-    border: 1px solid rgb(3, 32, 59) ;
-    border-radius: 10px;
-    overflow: hidden;
-
-}
-#kep img{
-    object-fit:fill;
-    width: 100%;
-    height: 100%;
-}
-
